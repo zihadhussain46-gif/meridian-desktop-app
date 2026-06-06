@@ -133,7 +133,7 @@
     "appId": "com.meridian.desktop",
     "productName": "Meridian",
     "executableName": "Meridian",
-    artifactName": "Meridian-${version}-${os}-${arch}.${ext}",
+    "artifactName": "Meridian-${version}-${os}-${arch}.${ext}",
     "icon": "assets/icon",
     "directories": {
       "output": "release"

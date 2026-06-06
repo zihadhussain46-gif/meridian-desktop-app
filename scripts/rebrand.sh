@@ -11,7 +11,7 @@ sed -i '' 's/"description": "Native desktop shell for Hermes Agent."/"descriptio
 sed -i '' 's/"author": "Nous Research"/"author": "Meridian AI"/' package.json
 sed -i '' 's/"appId": "com.nousresearch.hermes"/"appId": "com.meridian.desktop"/' package.json
 sed -i '' 's/"executableName": "Hermes"/"executableName": "Meridian"/' package.json
-sed -i '' 's/"artifactName": "Hermes-/artifactName": "Meridian-/' package.json
+sed -i '' 's/"artifactName": "Hermes-/"artifactName": "Meridian-/' package.json
 sed -i '' 's/"CFBundleDisplayName": "Hermes"/"CFBundleDisplayName": "Meridian"/' package.json
 sed -i '' 's/"CFBundleExecutable": "Hermes"/"CFBundleExecutable": "Meridian"/' package.json
 sed -i '' 's/"CFBundleName": "Hermes"/"CFBundleName": "Meridian"/' package.json
