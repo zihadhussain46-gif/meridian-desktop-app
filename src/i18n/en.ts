@@ -24,7 +24,7 @@ export const en: Translations = {
       loadingSettings: 'Loading Meridian settings',
       loadingSessions: 'Loading recent sessions',
       startingDesktopConnection: 'Starting desktop connection',
-      startingMeridianDesktop: 'Starting Meridian Desktop…'
+      startingHermesDesktop: 'Starting Meridian Desktop…'
     },
     errors: {
       backgroundExited: 'Meridian background process exited.',
@@ -73,7 +73,7 @@ export const en: Translations = {
     backendOutOfDateTitle: 'Backend out of date',
     backendOutOfDateMessage:
       'Your Meridian backend is older than this desktop build and may not work correctly. Update to align them.',
-    updateMeridian: 'Update Meridian',
+    updateHermes: 'Update Meridian',
     updateReadyTitle: 'Update ready',
     updateReadyMessage: count => `${count} new change${count === 1 ? '' : 's'} available.`,
     seeWhatsNew: "See what's new",
@@ -289,7 +289,7 @@ export const en: Translations = {
     gatewayStopped: 'Messaging gateway stopped',
     hermesActiveSessions: (version, count) => `Meridian ${version} · Active sessions ${count}`,
     restartMessaging: 'Restart messaging',
-    updateMeridian: 'Update Meridian',
+    updateHermes: 'Update Meridian',
     actionRunning: 'running',
     actionDone: 'done',
     actionFailed: 'failed',
@@ -676,7 +676,7 @@ export const en: Translations = {
       '/resume': 'resume a prior session',
       '/details': 'control transcript detail level',
       '/copy': 'copy selection or last assistant message',
-      '/quit': 'exit hermes'
+      '/quit': 'exit meridian'
     },
     hotkeyDescs: {
       '@': 'reference files, folders, urls, git',

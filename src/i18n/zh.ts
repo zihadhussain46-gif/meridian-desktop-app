@@ -22,7 +22,7 @@ export const zh: Translations = {
       loadingSettings: '正在加载 Meridian 设置',
       loadingSessions: '正在加载最近会话',
       startingDesktopConnection: '正在启动桌面连接',
-      startingMeridianDesktop: '正在启动 Meridian Desktop…'
+      startingHermesDesktop: '正在启动 Meridian Desktop…'
     },
     errors: {
       backgroundExited: 'Meridian 后台进程已退出。',
@@ -68,7 +68,7 @@ export const zh: Translations = {
     copyDetailFailed: '无法复制通知详情',
     backendOutOfDateTitle: '后端版本过旧',
     backendOutOfDateMessage: '你的 Meridian 后端早于当前桌面构建,可能无法正常工作。请更新以保持一致。',
-    updateMeridian: '更新 Meridian',
+    updateHermes: '更新 Meridian',
     updateReadyTitle: '有可用更新',
     updateReadyMessage: count => `有 ${count} 项新更改可用。`,
     seeWhatsNew: '查看更新内容',
@@ -372,7 +372,7 @@ export const zh: Translations = {
     gatewayStopped: '消息网关已停止',
     hermesActiveSessions: (version, count) => `Meridian ${version} · 活跃会话 ${count}`,
     restartMessaging: '重启消息服务',
-    updateMeridian: '更新 Meridian',
+    updateHermes: '更新 Meridian',
     actionRunning: '运行中',
     actionDone: '完成',
     actionFailed: '失败',
@@ -805,7 +805,7 @@ export const zh: Translations = {
       '/resume': '恢复之前的会话',
       '/details': '控制对话记录的详细程度',
       '/copy': '复制所选内容或最后一条助手消息',
-      '/quit': '退出 hermes'
+      '/quit': '退出 meridian'
     },
     hotkeyDescs: {
       '@': '引用文件、文件夹、URL、git',

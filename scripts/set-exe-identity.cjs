@@ -71,7 +71,7 @@ async function stampExeIdentity(exe, desktopRoot = path.resolve(__dirname, '..')
       ProductName: 'Meridian',
       FileDescription: 'Meridian',
       CompanyName: 'Meridian AI',
-      LegalCopyright: 'Copyright (c) 2026 Meridian AI'
+      LegalCopyright: 'Copyright (c) 2026 Nous Research'
     }
   })
 

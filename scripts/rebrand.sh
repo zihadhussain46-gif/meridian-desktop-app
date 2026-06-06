@@ -1,10 +1,7 @@
 #!/bin/bash
-# Meridian Desktop Rebranding Script
-# Run this after syncing apps/desktop/ from upstream Hermes.
+# Meridian Desktop Rebranding — run after rsync from upstream
 set -euo pipefail
-
-echo "=== Applying Meridian Desktop branding ==="
-
+echo "=== Meridian Desktop branding ==="
 sed -i '' 's/"name": "hermes"/"name": "meridian-desktop"/' package.json
 sed -i '' 's/"productName": "Hermes"/"productName": "Meridian"/' package.json
 sed -i '' 's/"description": "Native desktop shell for Hermes Agent."/"description": "Meridian AI Desktop — autonomous AI that grows with you."/' package.json
@@ -23,7 +20,6 @@ sed -i '' 's/"shortcutName": "Hermes"/"shortcutName": "Meridian"/' package.json
 sed -i '' 's/"uninstallDisplayName": "Hermes"/"uninstallDisplayName": "Meridian"/' package.json
 sed -i '' 's/"maintainer": "Nous Research/"maintainer": "Meridian AI/' package.json
 sed -i '' 's/"synopsis": "Native desktop shell for Hermes Agent."/"synopsis": "Meridian AI Desktop — autonomous AI that grows with you."/' package.json
-
 sed -i '' "s/const APP_NAME = 'Hermes'/const APP_NAME = 'Meridian'/" electron/main.cjs
 sed -i '' "s/title: 'Hermes',/title: 'Meridian',/" electron/main.cjs
 sed -i '' "s/message: 'Waiting to start Hermes backend'/message: 'Waiting to start Meridian backend'/g" electron/main.cjs
@@ -46,9 +42,7 @@ sed -i '' "s/Hermes backend failed to start/Meridian backend failed to start/g" 
 sed -i '' "s/Hermes backend exited before it became ready/Meridian backend exited before it became ready/g" electron/main.cjs
 sed -i '' "s/'Hermes.app'/'Meridian.app'/g" electron/main.cjs
 sed -i '' "s/Hermes.app/Meridian.app/g" electron/main.cjs
-
 sed -i '' 's/<title>Hermes/<title>Meridian/' index.html
-
 sed -i '' 's/"headline":"Hi, Hermes here"/"headline":"Hi, Meridian here"/g' src/components/chat/intro-copy.jsonl
 sed -i '' 's/"headline":"hermes-chan is here! <3"/"headline":"meridian-chan is here! <3"/g' src/components/chat/intro-copy.jsonl
 sed -i '' 's/"headline":"nyaaa~ hermes reporting"/"headline":"nyaaa~ meridian reporting"/g' src/components/chat/intro-copy.jsonl
@@ -58,28 +52,36 @@ sed -i '' 's/"headline":"Hermes. Code investigator."/"headline":"Meridian. Code 
 sed -i '' 's/"headline":"hermes-san is wistening"/"headline":"meridian-san is wistening"/g' src/components/chat/intro-copy.jsonl
 sed -i '' 's/"headline":"HERMES ONLINE. LFG."/"headline":"MERIDIAN ONLINE. LFG."/g' src/components/chat/intro-copy.jsonl
 sed -i '' 's/"headline":"Hermes Agent is ready."/"headline":"Meridian Agent is ready."/g' src/components/chat/intro-copy.jsonl
-
 sed -i '' "s/const WORDMARK = 'HERMES AGENT'/const WORDMARK = 'MERIDIAN'/" src/components/chat/intro.tsx
-
+sed -i '' "s/What should Hermes look at/What should Meridian look at/g" src/components/chat/intro.tsx
+sed -i '' "s/What does .* Hermes need to see/What does MERIDIAN_NEED_TO_SEE/g" src/components/chat/intro.tsx
+sed -i '' "s/What does MERIDIAN_NEED_TO_SEE/What does \${label} Meridian need to see/g" src/components/chat/intro.tsx
+sed -i '' "s/What should .* Hermes tackle/What should \${label} Meridian tackle/g" src/components/chat/intro.tsx
 sed -i '' "s/ProductName: 'Hermes'/ProductName: 'Meridian'/g" scripts/set-exe-identity.cjs
 sed -i '' "s/FileDescription: 'Hermes'/FileDescription: 'Meridian'/g" scripts/set-exe-identity.cjs
 sed -i '' "s/CompanyName: 'Nous Research'/CompanyName: 'Meridian AI'/g" scripts/set-exe-identity.cjs
-sed -i '' "s/LegalCopyright: 'Copyright (c) 2026 Nous Research'/LegalCopyright: 'Copyright (c) 2026 Meridian AI'/g" scripts/set-exe-identity.cjs
-
 sed -i '' "s/message: 'Starting Hermes Desktop…'/message: 'Starting Meridian Desktop…'/g" src/store/boot.ts
 sed -i '' "s/message = 'Hermes Desktop is ready'/message = 'Meridian Desktop is ready'/g" src/store/boot.ts
-
 sed -i '' "s/>Hermes Desktop</>Meridian Desktop</g" src/app/settings/about-settings.tsx
 sed -i '' 's/"Hermes checks for updates/"Meridian checks for updates/g' src/app/settings/about-settings.tsx
-
 sed -i '' "s/\"Hermes couldn't start\"/\"Meridian couldn't start\"/g" src/components/boot-failure-overlay.tsx
 sed -i '' 's/"Hermes is loading a response"/"Meridian is loading a response"/g' src/components/assistant-ui/thread.tsx
-
-# i18n — all display strings (replace all Hermes with Meridian — these are all translations)
-sed -i '' 's/Hermes/Meridian/g' src/i18n/en.ts
-sed -i '' 's/Hermes/Meridian/g' src/i18n/zh.ts
-
-# Remaining component display strings
+sed -i '' "s/Hermes/Meridian/g" src/i18n/runtime.test.ts
+sed -i '' "s/'Hermes /'Meridian /g" src/i18n/en.ts
+sed -i '' 's/"Hermes /"Meridian /g' src/i18n/en.ts
+sed -i '' "s/Updating Hermes/Updating Meridian/g" src/i18n/en.ts
+sed -i '' "s/Update Hermes/Update Meridian/g" src/i18n/en.ts
+sed -i '' "s/About Hermes/About Meridian/g" src/i18n/en.ts
+sed -i '' "s/Configure Hermes/Configure Meridian/g" src/i18n/en.ts
+sed -i '' 's/`Hermes /`Meridian /g' src/i18n/en.ts
+sed -i '' "s/'Hermes /'Meridian /g" src/i18n/zh.ts
+sed -i '' 's/"Hermes /"Meridian /g' src/i18n/zh.ts
+sed -i '' "s/Updating Hermes/Updating Meridian/g" src/i18n/zh.ts
+sed -i '' "s/Update Hermes/Update Meridian/g" src/i18n/zh.ts
+sed -i '' "s/About Hermes/About Meridian/g" src/i18n/zh.ts
+sed -i '' "s/Configure Hermes/Configure Meridian/g" src/i18n/zh.ts
+sed -i '' 's|把消息回调 URL 指向 Hermes|把消息回调 URL 指向 Meridian|g' src/i18n/zh.ts
+sed -i '' 's/`Hermes /`Meridian /g' src/i18n/zh.ts
 sed -i '' "s/'Hermes gateway unavailable'/'Meridian gateway unavailable'/g" src/app/gateway/hooks/use-gateway-request.ts
 sed -i '' "s/'Hermes gateway unavailable'/'Meridian gateway unavailable'/g" src/app/chat/index.tsx
 sed -i '' "s/'Hermes Desktop'/'Meridian Desktop'/g" src/app/settings/config-settings.tsx
@@ -88,5 +90,10 @@ sed -i '' "s/'Hermes is restarting...'/'Meridian is restarting...'/g" src/app/ch
 sed -i '' "s/'Hermes could not restart the server.'/'Meridian could not restart the server.'/g" src/app/chat/right-rail/preview-pane.tsx
 sed -i '' "s/Updating Hermes…/Updating Meridian…/g" src/app/updates-overlay.tsx
 sed -i '' "s/This version of Hermes/This version of Meridian/g" src/app/updates-overlay.tsx
-
+sed -i '' "s|path.resolve(__dirname, '../shared/src')|path.resolve(__dirname, './packages/shared/src')|" vite.config.ts
+sed -i '' "s|path.resolve(__dirname, '../../node_modules/react')|path.resolve(__dirname, './node_modules/react')|g" vite.config.ts
+sed -i '' 's|path.resolve(DESKTOP_ROOT, "..", "..")|path.resolve(DESKTOP_ROOT)|' scripts/write-build-stamp.cjs
+sed -i '' 's|"include": \["src", "../shared/src"\]|"include": ["src", "./packages/shared/src"]|' tsconfig.json
+sed -i '' 's|"@hermes/shared": \["\.\./shared/src/index\.ts"\]|"@hermes/shared": ["./packages/shared/src/index.ts"]|' tsconfig.json
+sed -i '' 's|node scripts/assert-root-install.cjs && node scripts/write-build-stamp.cjs && node scripts/stage-native-deps.cjs && tsc -b && vite build|node scripts/write-build-stamp.cjs \&\& tsc -b \&\& vite build|' package.json
 echo "=== Done ==="
